@@ -7,7 +7,12 @@ int main()
 {
     string wordtoguess;
     bool gamestart = true;
-    string enteredletters = "-----";
+    string guessedletters = "-----";
+    string enteredletter;
+
+    string players[] = {"player1", "player2", "player3"};
+    int turncount = 0;
+
 
     cout << "Input a 5 letter word." << endl;
     cin >> wordtoguess;
@@ -24,30 +29,34 @@ int main()
 
         for (int i=0; i <= 4; i++)
         {
-            if (enteredletters[i] != wordtoguess[i])
+            if (guessedletters[i] != wordtoguess[i])
             {
+                cout << "\n----------This is " << players[turncount % 3] << " turn----------" << endl;
                 cout << "\nInput letter at Place " << i+1 << " :";
-                cin >> enteredletters[i];
+                cin >> guessedletters[i];
+
             
-                if (enteredletters[i] != wordtoguess[i])
+                if (guessedletters[i] != wordtoguess[i])
                 {
                     for (int j=0; j <= 4; j++)
                     {
-                        if (enteredletters[i] == wordtoguess[j])
+                        if (guessedletters[i] == wordtoguess[j])
                         {
-                            enteredletters[i] = '*';
+                            guessedletters[i] = '*';
                         }
                     }
                 }
 
-                if (enteredletters[i] != '*' && enteredletters[i] != wordtoguess[i])
+                if (guessedletters[i] != '*' && guessedletters[i] != wordtoguess[i])
                 {
-                    enteredletters[i] = '_';
+                    guessedletters[i] = '_';
                 }
             }
+
+            turncount += 1;
         }
 
-        if (enteredletters == wordtoguess)
+        if (guessedletters == wordtoguess)
         {
             cout << "\n\nYou guessed the word. Congrats!" << endl;
             gamestart = false;
@@ -55,13 +64,13 @@ int main()
         else
         {
             cout << "\n\nYou didn't guess the word. Meh..." << endl;
-            cout << "\nYou guessed " << enteredletters[0] << " " << enteredletters[1] << " " << enteredletters[2] << " " << enteredletters[3] << " " << enteredletters[4] << endl << endl;
+            cout << "\nYou guessed " << guessedletters[0] << " " << guessedletters[1] << " " << guessedletters[2] << " " << guessedletters[3] << " " << guessedletters[4] << endl << endl;
 
             for (int i=0; i <= 4; i++)
             {
-                if (enteredletters[i] != wordtoguess[i])
+                if (guessedletters[i] != wordtoguess[i])
                 {
-                    enteredletters[i] = '_';
+                    guessedletters[i] = '_';
                 }
             }
         }
