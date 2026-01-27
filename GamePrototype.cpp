@@ -12,32 +12,52 @@ int main()
     string guess;
     string guessedletters = "-----";
     string enteredletter;
+    char restartgame = 'Y';
+    bool newgame = true;
+    bool gamedone = false;
 
-    string players[] = {"player1", "player2", "player3"};
+    string players[] = {"player1", "player2"};
     int turncount = 0;
-    int playerscore[] = {0, 0, 0};
-    int order[] = {0, 1, 2};
-
-    cout << "Input a 5 letter word." << endl;
-    cin >> wordtoguess;
-
-    while (wordtoguess.length() < 5 || wordtoguess.length() > 5)
-    {
-        cout << "The word to guess is too short/long. Input a 5 letter word" << endl;
-        cin >> wordtoguess;
-    }
-    
-    transform(wordtoguess.begin(), wordtoguess.end(), wordtoguess.begin(), ::toupper);
+    int rounds = 1;
+    int playerscore[] = {0, 0};
+    int order[] = {0, 1};
 
     while (gamestart)
     {
-        cout << "You are the player. Input a letter in the blank to fill in the word." << endl;
+        if (newgame == true)
+        {
+            // Reset all variables
+            rounds = 1;
+            turncount = 0;
+            for (int i=0; i <= 2; i++)
+            {
+                playerscore[i] = 0;
+            }
+            guessedletters = "-----";
+            wordtoguess = "-----";
+            newgame = false;
+            gamedone = false;
+
+            cout << "\nInput a 5 letter word." << endl;
+            cin >> wordtoguess;
+
+            while (wordtoguess.length() < 5 || wordtoguess.length() > 5)
+            {
+                cout << "The word to guess is too short/long. Input a 5 letter word" << endl;
+                cin >> wordtoguess;
+            }
+
+            transform(wordtoguess.begin(), wordtoguess.end(), wordtoguess.begin(), ::toupper);
+        }
+
+        cout << "\nA new round begins." << endl;
 
         for (int i=0; i <= 4; i++)
         {
             if (guessedletters[i] != wordtoguess[i])
             {
-                cout << "\n----------This is " << players[turncount % 3] << " turn----------" << endl << endl;
+                cout << endl << setw(22) << "Round " << rounds << endl;
+                cout << "\n----------This is " << players[turncount % 2] << " turn----------" << endl << endl;
                 cout << setw(16) << guessedletters[0] << " " << guessedletters[1] << " " << guessedletters[2] << " " << guessedletters[3] << " " << guessedletters[4] << endl;
                 cout << setw(16 + (i*2)) << "^" << endl;
 
@@ -58,7 +78,7 @@ int main()
                 }
                 else
                 {
-                    playerscore[turncount % 3] += 1;
+                    playerscore[turncount % 2] += 1;
                 }
 
                 if (guessedletters[i] != '*' && guessedletters[i] != wordtoguess[i])
@@ -69,6 +89,11 @@ int main()
                 turncount += 1;
             }
 
+            cout << "THE I COUNT " << i << endl;
+            if (i == 4)
+            {
+                rounds += 1;
+            }
         }
 
         if (guessedletters == wordtoguess)
@@ -76,9 +101,9 @@ int main()
             cout << "\n\nYou guessed the word. Congrats!" << endl;
             cout << "\nThe word is " << wordtoguess << endl;
 
-            for (int i = 0; i < 3 - 1; i++)
+            for (int i = 0; i < 2 - 1; i++)
             {
-                for (int j = i + 1; j < 3; j++)
+                for (int j = i + 1; j < 2; j++)
                 {
                     if (playerscore[order[j]] > playerscore[order[i]])
                     {
@@ -91,40 +116,19 @@ int main()
 
             cout << "\nFinal Scores:" << endl;;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 cout << players[order[i]] << " : " << playerscore[order[i]] << endl;
             }
 
-            // check if top score is tied
-            if (playerscore[order[0]] == playerscore[order[1]])
-            {
-                cout << "\nWinner: ";
+            // Declare winner
+            cout << "\nWinner: " << players[order[0]] << endl;
 
-                cout << players[order[0]];
-
-                for (int i = 1; i < 3; i++)
-                {
-                    if (playerscore[order[i]] == playerscore[order[0]])
-                    {
-                        cout << " and " << players[order[i]];
-                    }
-                }
-
-                cout << " (tie)" << endl;
-            }
-            else
-            {
-                cout << "\nWinner: " << players[order[0]] << endl;
-            }
-
-
-            gamestart = false;
+            gamedone = true;
         }
-        else
+        else if (rounds > 5)
         {
             cout << "\n\nYou didn't guess the word. Meh..." << endl;
-            //cout << "\nYou guessed " << guessedletters[0] << " " << guessedletters[1] << " " << guessedletters[2] << " " << guessedletters[3] << " " << guessedletters[4] << endl << endl;
 
             for (int i=0; i <= 4; i++)
             {
@@ -133,11 +137,28 @@ int main()
                     guessedletters[i] = '_';
                 }
             }
+
+            cout << "\nThe word is " << wordtoguess << endl;
+
+            gamedone = true;
         }
 
-        
+        if (gamedone)
+        {
+            cout << "\nWould you like another game? (Y/N)" << endl;
+            cin >> restartgame;
+            restartgame = toupper(restartgame);
 
-
+            if (restartgame == 'Y')
+            {
+                newgame = true;
+            }
+            else
+            {
+                cout << "\nThanks for Playing" << endl;
+                gamestart = false;
+            }
+        }
     }
 
     return 0;
