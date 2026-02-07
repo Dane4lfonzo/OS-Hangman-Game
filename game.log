@@ -1,0 +1,59 @@
+2026-02-07 08:28:36 | Server starting on port 5000.
+2026-02-07 08:28:38 | Forked child 343698 for player slot 0.
+2026-02-07 08:28:38 | Player 0 connected as 'Wordmaster'.
+2026-02-07 08:28:39 | Forked child 343763 for player slot 1.
+2026-02-07 08:28:39 | Player 1 connected as 'Florian'.
+2026-02-07 08:28:41 | Forked child 343792 for player slot 2.
+2026-02-07 08:28:41 | Player 2 connected as 'Matthias'.
+2026-02-07 08:28:41 | All players connected. Starting game #1. Waiting for wordmaster.
+2026-02-07 08:29:03 | Wordmaster set secret word for game #1.
+2026-02-07 08:29:03 | Turn: player 1 (pass=1/5 pos=1 display=_____ scoreA=0 scoreB=0)
+2026-02-07 08:29:05 | Player 1 guessed 'T' for pos 1 -> CORRECT (scoreA=1 scoreB=0)
+2026-02-07 08:29:05 | Turn: player 2 (pass=1/5 pos=2 display=T____ scoreA=1 scoreB=0)
+2026-02-07 08:29:06 | Player 2 guessed 'R' for pos 2 -> CORRECT (scoreA=1 scoreB=1)
+2026-02-07 08:29:06 | Turn: player 1 (pass=1/5 pos=3 display=TR___ scoreA=1 scoreB=1)
+2026-02-07 08:29:07 | Player 1 guessed 'I' for pos 3 -> CORRECT (scoreA=2 scoreB=1)
+2026-02-07 08:29:07 | Turn: player 2 (pass=1/5 pos=4 display=TRI__ scoreA=2 scoreB=1)
+2026-02-07 08:29:10 | Player 2 guessed 'A' for pos 4 -> CORRECT (scoreA=2 scoreB=2)
+2026-02-07 08:29:10 | Turn: player 1 (pass=1/5 pos=5 display=TRIA_ scoreA=2 scoreB=2)
+2026-02-07 08:29:11 | Player 1 guessed 'L' for pos 5 -> CORRECT (scoreA=3 scoreB=2)
+2026-02-07 08:29:11 | Reset complete. Waiting for wordmaster for game #2.
+2026-02-07 08:29:38 | Wordmaster disconnected.
+2026-02-07 08:29:38 | Player 0 disconnected.
+2026-02-07 08:29:47 | Player 2 disconnected.
+2026-02-07 08:29:47 | Player 1 disconnected.
+2026-02-07 08:29:47 | Server shutting down (SIGINT). Saving scores and cleaning up.
+2026-02-07 08:29:48 | Server starting on port 5000.
+2026-02-07 08:29:50 | Forked child 344403 for player slot 0.
+2026-02-07 08:29:50 | Player 0 connected as 'Wordmaster'.
+2026-02-07 08:29:51 | Forked child 344443 for player slot 1.
+2026-02-07 08:29:51 | Player 1 connected as 'Florian'.
+2026-02-07 08:29:52 | Forked child 344471 for player slot 2.
+2026-02-07 08:29:52 | Player 2 connected as 'Matthias'.
+2026-02-07 08:29:52 | All players connected. Starting game #1. Waiting for wordmaster.
+2026-02-07 08:29:55 | Wordmaster set secret word for game #1.
+2026-02-07 08:29:55 | Turn: player 1 (pass=1/5 pos=1 display=_____ scoreA=0 scoreB=0)
+2026-02-07 08:29:56 | Player 1 guessed 'T' for pos 1 -> CORRECT (scoreA=1 scoreB=0)
+2026-02-07 08:29:56 | Turn: player 2 (pass=1/5 pos=2 display=T____ scoreA=1 scoreB=0)
+2026-02-07 08:29:57 | Player 2 guessed 'R' for pos 2 -> CORRECT (scoreA=1 scoreB=1)
+2026-02-07 08:29:57 | Turn: player 1 (pass=1/5 pos=3 display=TR___ scoreA=1 scoreB=1)
+2026-02-07 08:29:59 | Player 1 guessed 'I' for pos 3 -> CORRECT (scoreA=2 scoreB=1)
+2026-02-07 08:29:59 | Turn: player 2 (pass=1/5 pos=4 display=TRI__ scoreA=2 scoreB=1)
+2026-02-07 08:30:00 | Player 2 guessed 'A' for pos 4 -> CORRECT (scoreA=2 scoreB=2)
+2026-02-07 08:30:00 | Turn: player 1 (pass=1/5 pos=5 display=TRIA_ scoreA=2 scoreB=2)
+2026-02-07 08:30:02 | Player 1 guessed 'L' for pos 5 -> CORRECT (scoreA=3 scoreB=2)
+2026-02-07 08:30:02 | Reset complete. Waiting for wordmaster for game #2.
+2026-02-07 08:30:06 | Wordmaster set secret word for game #1.
+2026-02-07 08:30:06 | Turn: player 1 (pass=1/5 pos=1 display=_____ scoreA=0 scoreB=0)
+2026-02-07 08:30:07 | Player 1 guessed 'A' for pos 1 -> CORRECT (scoreA=1 scoreB=0)
+2026-02-07 08:30:07 | Turn: player 2 (pass=1/5 pos=2 display=A____ scoreA=1 scoreB=0)
+2026-02-07 08:30:09 | Player 2 guessed 'G' for pos 2 -> CORRECT (scoreA=1 scoreB=1)
+2026-02-07 08:30:09 | Turn: player 1 (pass=1/5 pos=3 display=AG___ scoreA=1 scoreB=1)
+2026-02-07 08:30:10 | Player 1 guessed 'A' for pos 3 -> CORRECT (scoreA=2 scoreB=1)
+2026-02-07 08:30:10 | Turn: player 2 (pass=1/5 pos=4 display=AGA__ scoreA=2 scoreB=1)
+2026-02-07 08:30:11 | Player 2 guessed 'I' for pos 4 -> CORRECT (scoreA=2 scoreB=2)
+2026-02-07 08:30:11 | Turn: player 1 (pass=1/5 pos=5 display=AGAI_ scoreA=2 scoreB=2)
+2026-02-07 08:30:13 | Player 1 guessed 'N' for pos 5 -> CORRECT (scoreA=3 scoreB=2)
+2026-02-07 08:30:13 | Reset complete. Waiting for wordmaster for game #2.
+2026-02-07 08:30:20 | Wordmaster disconnected.
+2026-02-07 08:30:20 | Player 0 disconnected.
